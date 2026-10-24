@@ -1,0 +1,160 @@
+/* Global CSS Reset & Variables */
+:root {
+  --color-primary-green: #205c43;
+  --color-primary-green-hover: #174532;
+  --color-primary-green-light: #eaf5ee;
+  --color-primary-green-border: #cbe0d3;
+  
+  --color-bg-page: #f0f2f1;
+  --color-bg-phone: #fcfdfc;
+  --color-surface-white: #ffffff;
+  
+  --color-text-title: #141c17;
+  --color-text-body: #47544d;
+  --color-text-muted: #6e7d75;
+  --color-text-faint: #98a79f;
+  
+  --color-border-subtle: #e6ede8;
+  --color-border-strong: #d2ded6;
+  
+  /* Bad HCI intentional colors */
+  --color-bad-orange-bg: #fff6e8;
+  --color-bad-orange-border: #f8dfb8;
+  --color-bad-orange-text: #965f14;
+  --color-bad-faint-text: #adbdb4;
+  --color-bad-teal-badge: #1a6d51;
+  
+  --font-main: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  
+  --shadow-phone: 0 25px 60px -15px rgba(20, 45, 30, 0.18), 0 0 1px 1px rgba(0, 0, 0, 0.08);
+  --shadow-card: 0 4px 18px rgba(0, 0, 0, 0.04);
+  --shadow-floating: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--color-bg-page);
+  color: var(--color-text-title);
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  transition: all 0.18s ease;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+input, select {
+  font-family: inherit;
+}
+
+/* Common UI Utility Classes */
+.btn-primary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  height: 52px;
+  background-color: var(--color-primary-green);
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 14px;
+  text-decoration: none;
+  box-shadow: 0 3px 10px rgba(32, 92, 67, 0.2);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-green-hover);
+}
+
+.btn-secondary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  height: 52px;
+  background-color: #ffffff;
+  color: var(--color-primary-green);
+  border: 1.5px solid var(--color-primary-green);
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 14px;
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-primary-green-light);
+}
+
+.text-link {
+  color: var(--color-primary-green);
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.text-link-muted {
+  color: var(--color-text-muted);
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.text-link-green {
+  color: var(--color-primary-green);
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Animations */
+@keyframes pulseGlow {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+}
+
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spin-slow {
+  animation: spinSlow 6s linear infinite;
+}
